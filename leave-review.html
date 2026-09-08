@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Leave a review for Celeste's Flowers — custom floral arrangements, gift baskets, and character-themed florals in Austin, TX.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Celeste's Flowers">
+<meta property="og:title" content="Leave a Review | Celeste's Flowers">
+<meta property="og:image" content="https://raw.githubusercontent.com/lincolnmcrow/celestesflowerss/main/assets/logo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+<title>Leave a Review | Celeste's Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.jpg" alt="Celeste's Flowers logo">
+      Celeste's Flowers
+    </a>
+    <nav class="mainnav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#order">Custom Order</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#delivery">Delivery</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="topbar-right">
+      <div class="langswitch" role="group" aria-label="Language / Idioma">
+        <button type="button" id="lang-en" aria-pressed="true">EN</button>
+        <button type="button" id="lang-es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobilemenu" id="mobilemenu">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#order">Custom Order</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="index.html#delivery">Delivery</a>
+    <a href="index.html#faq">FAQ</a>
+  </div>
+</div>
+
+<!-- ============ LEAVE A REVIEW ============ -->
+<section id="leave-review" style="padding-top:56px;">
+  <div class="wrap">
+    <div class="services-head">
+      <span class="eyebrow" id="lrEyebrowEn">Share Your Experience</span>
+      <h2 id="lrH2En">Leave a Review</h2>
+      <p class="measure" style="color:var(--ink-soft)" id="lrSubEn">Tell us about your experience — a photo (or video) of your arrangement is always welcome. Reviews are read by Maylin personally, and approved ones will eventually get featured right on the Celeste's Flowers website.</p>
+    </div>
+
+    <div class="review-form-wrap">
+      <form id="reviewForm" name="review" data-netlify="true" netlify-honeypot="rf-bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="review">
+        <p style="display:none"><label>Don't fill this out: <input name="rf-bot-field"></label></p>
+        <div class="field-grid">
+          <div class="field"><label>Name</label><input required name="rname" type="text"></div>
+          <div class="field">
+            <label>Rating</label>
+            <div class="star-input" id="starInput" role="radiogroup" aria-label="Rating">
+              <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Your Review</label>
+          <textarea name="rtext" maxlength="500" placeholder="What did you order, and how was your experience?"></textarea>
+        </div>
+        <div class="field">
+          <label>Instagram or TikTok Handle (optional)</label>
+          <input type="text" name="rsocial" placeholder="@yourhandle">
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label>Add a Photo (optional)</label>
+            <div class="photo-input-row">
+              <input type="file" accept="image/*" id="reviewPhotoInput" name="rphoto">
+              <img id="reviewPhotoPreview" class="photo-preview" alt="">
+            </div>
+          </div>
+          <div class="field">
+            <label>Attach a Video (optional)</label>
+            <input type="file" accept="video/*" name="rvideo" id="reviewVideoInput">
+          </div>
+        </div>
+        <div class="form-footer">
+          <button class="btn btn-berry" type="submit">Submit Review</button>
+          <span class="form-msg" id="reviewMsg"></span>
+        </div>
+      </form>
+    </div>
+
+    <p style="margin-top:28px"><a href="index.html#reviews">← Back to Celeste's Flowers</a></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="brand" style="color:var(--ink);margin-bottom:10px;">
+        <img class="brand-mark" src="assets/logo.jpg" alt="Celeste's Flowers logo">
+        Celeste's Flowers
+      </div>
+      <p style="max-width:32ch;color:var(--ink-soft);font-size:.9rem">Custom flowers, gifts &amp; experiences made with love.</p>
+      <p style="font-size:.85rem;color:var(--ink-soft)">Serving Austin • Surrounding TX Areas</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#delivery">Delivery Information</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="https://www.instagram.com/celestesflowerss/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@celestesflowers" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/vanesucreations" target="_blank" rel="noopener">Facebook</a>
+      <a href="index.html#order">Custom Order</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Celeste's Flowers. Austin, Texas.</span>
+    <span>Custom inquiries only — no items are charged automatically.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var ham = document.getElementById("hamburger");
+  var mm = document.getElementById("mobilemenu");
+  ham.addEventListener("click",function(){
+    var open = mm.classList.toggle("open");
+    ham.setAttribute("aria-expanded", String(open));
+  });
+  mm.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ mm.classList.remove("open"); }); });
+
+  var lang = "en";
+  var esCopy = {
+    eyebrow: "Comparte Tu Experiencia",
+    h2: "Deja una Reseña",
+    sub: "Cuéntanos sobre tu experiencia — una foto (o video) de tu arreglo siempre es bienvenida. Maylin lee las reseñas personalmente, y las aprobadas eventualmente serán presentadas en el sitio web de Celeste's Flowers.",
+    ratingLabel: "Calificación",
+    nameLabel: "Nombre",
+    textLabel: "Tu Reseña",
+    textPh: "¿Qué pediste, y cómo fue tu experiencia?",
+    socialLabel: "Usuario de Instagram o TikTok (opcional)",
+    photoLabel: "Añadir Foto (opcional)",
+    videoLabel: "Adjuntar Video (opcional)",
+    submit: "Enviar Reseña",
+    back: "← Volver a Celeste's Flowers",
+    thanks: "¡Gracias por tu reseña!",
+    error: "No se pudo enviar la reseña. Intenta de nuevo.",
+    ratingRequired: "Por favor selecciona una calificación."
+  };
+  var enCopy = {
+    eyebrow: "Share Your Experience",
+    h2: "Leave a Review",
+    sub: "Tell us about your experience — a photo (or video) of your arrangement is always welcome. Reviews are read by Maylin personally, and approved ones will eventually get featured right on the Celeste's Flowers website.",
+    ratingLabel: "Rating",
+    nameLabel: "Name",
+    textLabel: "Your Review",
+    textPh: "What did you order, and how was your experience?",
+    socialLabel: "Instagram or TikTok Handle (optional)",
+    photoLabel: "Add a Photo (optional)",
+    videoLabel: "Attach a Video (optional)",
+    submit: "Submit Review",
+    back: "← Back to Celeste's Flowers",
+    thanks: "Thank you for your review!",
+    error: "Couldn't submit the review — please try again.",
+    ratingRequired: "Please choose a star rating."
+  };
+  var copy = enCopy;
+
+  function applyLang(l){
+    lang = l;
+    copy = l === "es" ? esCopy : enCopy;
+    document.documentElement.lang = l;
+    document.getElementById("lrEyebrowEn").textContent = copy.eyebrow;
+    document.getElementById("lrH2En").textContent = copy.h2;
+    document.getElementById("lrSubEn").textContent = copy.sub;
+    ["lang-en"].forEach(function(id){var b=document.getElementById(id); if(b) b.setAttribute("aria-pressed", String(l==="en"));});
+    ["lang-es"].forEach(function(id){var b=document.getElementById(id); if(b) b.setAttribute("aria-pressed", String(l==="es"));});
+  }
+  var langEnBtn = document.getElementById("lang-en");
+  var langEsBtn = document.getElementById("lang-es");
+  if(langEnBtn) langEnBtn.addEventListener("click",function(){applyLang("en");});
+  if(langEsBtn) langEsBtn.addEventListener("click",function(){applyLang("es");});
+
+  function submitToNetlify(formData){
+    return fetch("/", { method: "POST", body: formData }).catch(function(){ /* not on Netlify — ignore */ });
+  }
+
+  var dbPromise = (window.claude && window.claude.use) ? window.claude.use("db") : Promise.resolve(null);
+
+  var starInput = document.getElementById("starInput");
+  var stars = starInput ? Array.from(starInput.querySelectorAll(".star")) : [];
+  var currentRating = 0;
+  stars.forEach(function(s){
+    s.addEventListener("click", function(){
+      currentRating = parseInt(s.dataset.value, 10);
+      stars.forEach(function(st){ st.classList.toggle("active", parseInt(st.dataset.value,10) <= currentRating); });
+    });
+  });
+
+  var photoInput = document.getElementById("reviewPhotoInput");
+  var photoPreview = document.getElementById("reviewPhotoPreview");
+  var photoDataUrl = "";
+  if(photoInput){
+    photoInput.addEventListener("change", function(){
+      var file = photoInput.files && photoInput.files[0];
+      photoDataUrl = "";
+      photoPreview.classList.remove("show");
+      if(!file) return;
+      if(file.size > 10*1024*1024){ alert(lang==="es" ? "La foto es demasiado grande (máx 10MB)." : "That photo is too large (max 10MB)."); photoInput.value=""; return; }
+      var reader = new FileReader();
+      reader.onload = function(ev){
+        var img = new Image();
+        img.onload = function(){
+          var maxW = 900;
+          var scale = Math.min(1, maxW / img.width);
+          var canvas = document.createElement("canvas");
+          canvas.width = Math.round(img.width * scale);
+          canvas.height = Math.round(img.height * scale);
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          var quality = 0.6;
+          var out = canvas.toDataURL("image/jpeg", quality);
+          while(out.length > 180000 && quality > 0.25){
+            quality -= 0.1;
+            out = canvas.toDataURL("image/jpeg", quality);
+          }
+          photoDataUrl = out;
+          photoPreview.src = out;
+          photoPreview.classList.add("show");
+        };
+        img.src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  var reviewForm = document.getElementById("reviewForm");
+  reviewForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    var data = new FormData(reviewForm);
+    var msg = document.getElementById("reviewMsg");
+    if(!currentRating){
+      msg.textContent = copy.ratingRequired;
+      return;
+    }
+    var record = {
+      name: (data.get("rname") || "").toString().slice(0,80),
+      rating: currentRating,
+      text: (data.get("rtext") || "").toString().slice(0,500),
+      social: (data.get("rsocial") || "").toString().slice(0,80),
+      photo: photoDataUrl || "",
+      lang: lang,
+      submittedAt: new Date().toISOString()
+    };
+    Promise.all([
+      submitToNetlify(data),
+      dbPromise.then(function(db){
+        if(db){
+          var id = "rev_" + Date.now() + "_" + Math.random().toString(36).slice(2,7);
+          return db.doc("reviews/"+id).set(record);
+        }
+      })
+    ]).then(function(){
+      msg.textContent = copy.thanks;
+      reviewForm.reset();
+      currentRating = 0;
+      stars.forEach(function(st){ st.classList.remove("active"); });
+      photoDataUrl = "";
+      photoPreview.classList.remove("show");
+    }).catch(function(){
+      msg.textContent = copy.error;
+    });
+  });
+})();
+</script>
+</body>
+</html>
