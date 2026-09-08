@@ -7,28 +7,27 @@
     --card:#fffaf0;
     --ink:#3a2a1c;
     --ink-soft:#8a7358;
-    --moss:#5f9a4c;
-    --moss-soft:#c7e0b8;
-    --berry:#e56a34;
-    --berry-soft:#f6c9a0;
-    --periwinkle:#8a6bd0;
-    --periwinkle-soft:#dccbf3;
+    --moss:#c9457e;
+    --moss-soft:#f6d3e3;
+    --berry:#d95c8a;
+    --berry-soft:#f8d9e6;
+    --periwinkle:#c94f82;
+    --periwinkle-soft:#f3d6e4;
     --yolk:#e0779a;
     --yolk-soft:#fbdfe9;
     --line:#e6d2a8;
     --shadow:rgba(120,80,30,.16);
-    --focus:#9b7fd8;
+    --focus:#d9679b;
     --mark:#2a1c10;
     --psyduck-yellow:#f6b8cf;
-    --snorlax-blue:#3f7a8c;
-    --snorlax-blue-soft:#d6e8ec;
-    /* pulled straight from the real logo artwork's sunset-to-night sky */
-    --brand-a:#f2903c;
-    --brand-b:#3a1830;
-    --brand-c:#7a2f74;
-    --brand-d:#ae3a76;
-    --brand-e:#3e8273;
-    --brand-f:#5b3087;
+    --snorlax-blue:#d16b93;
+    --snorlax-blue-soft:#f8dde7;
+    --brand-a:#e98bab;
+    --brand-b:#7a2f52;
+    --brand-c:#c94f82;
+    --brand-d:#ae3a6e;
+    --brand-e:#e0779a;
+    --brand-f:#a8447a;
   }
 
   *{box-sizing:border-box;}
@@ -132,7 +131,7 @@
     font-family:Fraunces, serif;font-weight:700;font-size:1.3rem;
   }
   .brand svg{width:34px;height:34px;flex:none;}
-  .brand-mark{width:38px;height:38px;border-radius:50%;flex:none;object-fit:cover;border:2px solid var(--line);}
+  .brand-mark{width:38px;height:38px;border-radius:6px;flex:none;object-fit:cover;background:var(--paper);}
   nav.mainnav{display:flex;align-items:center;gap:18px;}
   nav.mainnav a{font-size:.86rem;white-space:nowrap;}
   nav.mainnav a{
@@ -381,11 +380,11 @@
   }
   .tiktok-card .instagram-header{margin-bottom:14px;}
   .tiktok-card .instagram-avatar{border-color:var(--ink);}
-  .tiktok-card .tiktok-stats{
+  .tiktok-stats{
     display:flex;gap:14px;flex-wrap:wrap;font-family:"Space Mono",monospace;
     font-size:.78rem;color:var(--ink-soft);margin-bottom:16px;
   }
-  .tiktok-card .tiktok-stats strong{color:var(--ink);}
+  .tiktok-stats strong{color:var(--ink);}
   .tiktok-btn{
     display:block;width:100%;padding:.85em 0;text-align:center;
     background:var(--psyduck-yellow);color:var(--mark);text-decoration:none;
