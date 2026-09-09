@@ -1,10 +1,10 @@
   :root{
     /* Warm creme palette, drawn from Maylin's own card: buttercream ground,
        sage script, lavender + coral watercolor blooms, cocoa footer, Psyduck gold. */
-    --paper:#fdfaf5;
-    --paper-soft:#f3e2bf;
+    --paper:#fdf7f8;
+    --paper-soft:#f8e2ec;
     --deep:#3d2a1a;
-    --card:#fffaf0;
+    --card:#fff6f9;
     --ink:#3a2a1c;
     --ink-soft:#8a7358;
     --moss:#c9457e;
@@ -15,8 +15,8 @@
     --periwinkle-soft:#f3d6e4;
     --yolk:#e0779a;
     --yolk-soft:#fbdfe9;
-    --line:#e6d2a8;
-    --shadow:rgba(120,80,30,.16);
+    --line:#f0c8dc;
+    --shadow:rgba(180,70,110,.16);
     --focus:#d9679b;
     --mark:#2a1c10;
     --psyduck-yellow:#f6b8cf;
