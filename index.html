@@ -847,15 +847,21 @@
     var nextBtn = document.getElementById("igNext");
     var step = 224; // tile width + gap
 
-    function updateNavState(){
-      if (!prevBtn || !nextBtn) return;
-      prevBtn.disabled = grid.scrollLeft <= 4;
-      nextBtn.disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 4;
-    }
-    if (prevBtn) prevBtn.addEventListener("click", function(){ grid.scrollBy({ left: -step * 2, behavior: "smooth" }); });
-    if (nextBtn) nextBtn.addEventListener("click", function(){ grid.scrollBy({ left: step * 2, behavior: "smooth" }); });
-    grid.addEventListener("scroll", updateNavState);
-    updateNavState();
+    function maxScroll(){ return grid.scrollWidth - grid.clientWidth; }
+    if (prevBtn) prevBtn.addEventListener("click", function(){
+      if (grid.scrollLeft <= 4) { grid.scrollTo({ left: maxScroll(), behavior: "smooth" }); }
+      else { grid.scrollBy({ left: -step * 2, behavior: "smooth" }); }
+    });
+    if (nextBtn) nextBtn.addEventListener("click", function(){
+      if (grid.scrollLeft >= maxScroll() - 4) { grid.scrollTo({ left: 0, behavior: "smooth" }); }
+      else { grid.scrollBy({ left: step * 2, behavior: "smooth" }); }
+    });
+
+    setInterval(function(){
+      if (grid.matches(":hover")) return;
+      if (grid.scrollLeft >= maxScroll() - 4) { grid.scrollTo({ left: 0, behavior: "smooth" }); }
+      else { grid.scrollBy({ left: step, behavior: "smooth" }); }
+    }, 3500);
   })();
 
   /* ---------------- delivery zip checker ---------------- */
