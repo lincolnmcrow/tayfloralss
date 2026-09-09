@@ -76,7 +76,7 @@
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section id="about">
+<section id="about" class="pink-blob">
   <div class="wrap">
     <div class="about-welcome">
       <div class="welcome-grid">
@@ -103,7 +103,7 @@
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section id="services">
+<section id="services" class="pink-blob">
   <div class="wrap">
     <div class="services-head">
       <span class="eyebrow" data-i18n="services_eyebrow">What I Create</span>
@@ -187,20 +187,17 @@
 
 <!-- ============ FALL COLLECTION ============ -->
 <section id="fall" class="band band-fall">
-  <div class="wrap character-grid">
-    <div>
-      <div class="fall-card">
-        <span class="eyebrow" data-i18n="fall_eyebrow">Seasonal · Fall Collection</span>
-        <h2 data-i18n="fall_h2">Spooky season, sweeter memories.</h2>
-        <p data-i18n="fall_p">Fall in the DFW area means porch string lights, a chill in the air, and pumpkin-spice everything — my favorite season for moody, romantic florals. It isn't just the season of candy. It's the season of love, too.</p>
-      </div>
-      <div class="mascot-row">
-        <div class="mascot-chip"><span style="font-size:1.3rem">🥀</span><span data-i18n="fall4">Moody Autumn Bouquets</span></div>
-        <div class="mascot-chip"><span style="font-size:1.3rem">🍁</span><span data-i18n="fall1">Deep Burgundy &amp; Rust Palettes</span></div>
-      </div>
-      <a class="btn" href="#order" data-i18n="fall_cta">Reserve My Fall Bouquet</a>
+  <div class="wrap fall-center">
+    <div class="fall-card">
+      <span class="eyebrow" data-i18n="fall_eyebrow">Seasonal · Fall Collection</span>
+      <h2 data-i18n="fall_h2">Spooky season, sweeter memories.</h2>
+      <p data-i18n="fall_p">Fall in the DFW area means porch string lights, a chill in the air, and pumpkin-spice everything — my favorite season for moody, romantic florals. It isn't just the season of candy. It's the season of love, too. Fall &amp; Halloween bouquets, perfect for the spooky season, made with love. For a limited time, take $35 off your next bouquet — spots are limited so book early!</p>
     </div>
-    <img src="images/seasonal/fall-halloween-bouquets.jpg" alt="Tay Florals fall and Halloween bouquet collection" style="width:100%;max-width:420px;margin:0 auto;aspect-ratio:9/16;border-radius:12px;object-fit:cover;box-shadow:0 14px 30px -14px var(--shadow)">
+    <div class="mascot-row">
+      <div class="mascot-chip"><span style="font-size:1.3rem">🥀</span><span data-i18n="fall4">Moody Autumn Bouquets</span></div>
+      <div class="mascot-chip"><span style="font-size:1.3rem">🍁</span><span data-i18n="fall1">Deep Burgundy &amp; Rust Palettes</span></div>
+    </div>
+    <a class="btn" href="#order" data-i18n="fall_cta">Reserve My Fall Bouquet</a>
   </div>
 </section>
 
@@ -243,7 +240,7 @@
 </section>
 
 <!-- ============ GALLERY ============ -->
-<section class="band-periwinkle" id="gallery">
+<section class="band-periwinkle pink-blob" id="gallery">
   <div class="wrap">
     <span class="eyebrow" data-i18n="gallery_eyebrow">Follow My Creations</span>
     <h2 style="margin-bottom:.3em" data-i18n="gallery_h2">Featured Creations</h2>
@@ -411,16 +408,16 @@
           <div class="field"><label data-i18n="f_phone">Phone Number</label><input name="phone" type="tel"></div>
           <div class="field">
             <label data-i18n="f_contact">Preferred Contact Method</label>
-            <select name="contactMethod">
+            <select name="contactMethod" id="contactMethodSelect">
               <option data-i18n="opt_email">Email</option>
               <option data-i18n="opt_phone">Phone Call</option>
               <option data-i18n="opt_text">Text Message</option>
               <option data-i18n="opt_ig">Instagram</option>
             </select>
           </div>
-          <div class="field">
-            <label data-i18n="f_social">Instagram or TikTok Handle (optional)</label>
-            <input name="social" type="text" data-i18n-ph="f_social_ph" placeholder="@yourhandle">
+          <div class="field" id="socialField">
+            <label><span data-i18n="f_social">Instagram or TikTok Handle</span> <span id="socialOptionalTag">(optional)</span></label>
+            <input name="social" type="text" id="socialInput" data-i18n-ph="f_social_ph" placeholder="@yourhandle">
           </div>
           <div class="field">
             <label data-i18n="f_heard">How Did You Hear About Us?</label>
@@ -440,6 +437,7 @@
           <label><input type="checkbox" name="lookingFor" value="Bouquet"><span data-i18n="lf1">Bouquet</span></label>
           <label><input type="checkbox" name="lookingFor" value="Fresh Flowers"><span data-i18n="lf6">Fresh Flowers</span></label>
           <label><input type="checkbox" name="lookingFor" value="Eternal Flowers"><span data-i18n="lf7">Eternal Flowers</span></label>
+          <label><input type="checkbox" name="lookingFor" value="Fall Collection"><span>🍁 Fall Collection</span></label>
           <label><input type="checkbox" name="lookingFor" value="Something Else"><span data-i18n="lf10">Something Else</span></label>
         </div>
 
@@ -506,7 +504,7 @@
 </section>
 
 <!-- ============ REVIEWS ============ -->
-<section id="reviews">
+<section id="reviews" class="pink-blob">
   <div class="wrap">
     <div class="services-head">
       <span class="eyebrow" data-i18n="reviews_eyebrow">Customer Love</span>
@@ -539,6 +537,7 @@
     <div>
       <h4 data-i18n="footer_h2">Connect</h4>
       <a href="https://www.instagram.com/tayfloralss_/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:tayfloralsl@gmail.com">tayfloralsl@gmail.com</a>
       <a href="#order" data-i18n="nav_order">Custom Order</a>
     </div>
     <div>
@@ -636,7 +635,7 @@
     opt_phone:{en:"Phone Call",es:"Llamada Telefónica"},
     opt_text:{en:"Text Message",es:"Mensaje de Texto"},
     opt_ig:{en:"Instagram",es:"Instagram"},
-    f_social:{en:"Instagram or TikTok Handle (optional)",es:"Usuario de Instagram o TikTok (opcional)"},
+    f_social:{en:"Instagram or TikTok Handle",es:"Usuario de Instagram o TikTok"},
     f_social_ph:{en:"@yourhandle",es:"@tuusuario"},
     f_heard:{en:"How Did You Hear About Us?",es:"¿Cómo Nos Conociste?"},
     hr1:{en:"Instagram",es:"Instagram"},
@@ -877,6 +876,19 @@
   fulfillmentSelect.addEventListener("change", function(){
     shippingNote.classList.toggle("show", fulfillmentSelect.value === "shipping");
   });
+
+  var contactMethodSelect = document.getElementById("contactMethodSelect");
+  var socialField = document.getElementById("socialField");
+  var socialInput = document.getElementById("socialInput");
+  var socialOptionalTag = document.getElementById("socialOptionalTag");
+  function updateSocialRequirement(){
+    var needsHandle = contactMethodSelect.value === "Instagram";
+    socialInput.required = needsHandle;
+    socialField.classList.toggle("is-required", needsHandle);
+    socialOptionalTag.hidden = needsHandle;
+  }
+  contactMethodSelect.addEventListener("change", updateSocialRequirement);
+  updateSocialRequirement();
 
   var dbPromise = (window.claude && window.claude.use) ? window.claude.use("db") : Promise.resolve(null);
 
