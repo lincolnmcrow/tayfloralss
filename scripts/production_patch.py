@@ -17,13 +17,13 @@ if "@tayfloralss_" not in html:
     <div style="background:#fff;border:1px solid #ecd8dd;border-radius:24px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:16px">
         <div style="width:64px;height:64px;border-radius:50%;overflow:hidden;background:#f7dbe4;flex:none">
-          <img src="images/about/naba.jpg" alt="Tay Florals" style="width:100%;height:100%;object-fit:cover">
+          <img src="images/ig/pfp-new.jpg" alt="Tay Florals" style="width:100%;height:100%;object-fit:cover">
         </div>
         <div>
-          <strong style="display:block;font:700 1.35rem Fraunces,serif">DFW Florist</strong>
+          <strong style="display:block;font:700 1.35rem Fraunces,serif">Naba Tay | DFW Florist</strong>
           <span style="color:#b3123a;font-weight:700">@tayfloralss_</span>
           <div style="font-size:.86rem;color:#73585d;margin-top:3px">Dallas–Fort Worth · 3-day notice required</div>
-          <div style="font-size:.82rem;color:#73585d">1,127 followers · 630 following</div>
+          <div style="font-size:.82rem;color:#73585d">1,138 followers · 589 following</div>
         </div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
