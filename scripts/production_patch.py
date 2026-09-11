@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 path = Path("index.html")
@@ -33,26 +34,24 @@ if "@tayfloralss_" not in html:
   </div>
 </section>
 '''
-    marker = '<section class="sec dark" id="gallery">'
-    if marker in html:
-        html = html.replace(marker, instagram + '\n' + marker, 1)
-    else:
+    pattern = r'(<section class="hero".*?</section>)\s*(<section)'
+    html, count = re.subn(pattern, r'\1\n' + instagram + r'\n\2', html, count=1, flags=re.S)
+    if count != 1:
         html = html.replace('</main>', instagram + '\n</main>', 1)
 
 # Put the exact Fall video into a visible, reliable Google Drive video player.
 # The Drive /preview URL renders Google's native video player instead of relying
 # on Drive's download endpoint as an HTML5 <video src>, which can be blocked.
+# autoplay=1 + mute=1 lets Drive's player start playing on load without a click,
+# matching the way the hero videos autoplay (browsers require muted for autoplay).
 if 'id="tay-fall-drive-video"' not in html:
     video = '''
 <section class="sec seasonal" id="fall-video">
   <div class="w seasonalGrid">
     <div class="seasonalArt" style="background:#18090d">
-      <iframe id="tay-fall-drive-video" src="https://drive.google.com/file/d/19fcEOCIouLndxHFSgNpILzqKsJ2H3SA1/preview" title="Tay Florals Fall video" allow="autoplay" style="display:block;width:100%;aspect-ratio:9/16;border:0"></iframe>
+      <iframe id="tay-fall-drive-video" src="https://drive.google.com/file/d/19fcEOCIouLndxHFSgNpILzqKsJ2H3SA1/preview?autoplay=1&mute=1" title="Tay Florals Fall video" allow="autoplay" style="display:block;width:100%;aspect-ratio:9/16;border:0"></iframe>
     </div>
     <div class="seasonalCopy">
-      <div class="ey">Seasonal spotlight</div>
-      <h2>Fall flowers are here.</h2>
-      <p>Bring the season into your next bouquet with warm, romantic tones and a custom design made around your occasion.</p>
       <a class="btn" href="#order">Ask about Fall Flowers</a>
     </div>
   </div>
