@@ -6,13 +6,16 @@ html = path.read_text(encoding="utf-8")
 
 css = r'''
 /* HERO READABILITY FIX */
-.hero:after{background:linear-gradient(180deg,rgba(12,2,6,.38) 0%,rgba(12,2,6,.48) 34%,rgba(12,2,6,.90) 100%)!important}
-.heroCopy{text-shadow:0 2px 18px rgba(0,0,0,.48)}
-.hero h1{text-shadow:0 3px 24px rgba(0,0,0,.62)}
-.hero p{color:#fff!important;text-shadow:0 2px 10px rgba(0,0,0,.55)}
-.hero .kicker{color:#fff!important;text-shadow:0 2px 10px rgba(0,0,0,.55)}
-.heroNote{color:#fff!important;text-shadow:0 2px 10px rgba(0,0,0,.55)}
-.heroBtns .btn.light{box-shadow:0 5px 22px rgba(0,0,0,.22)}
+.hero:after{background:linear-gradient(90deg,rgba(8,2,5,.78) 0%,rgba(8,2,5,.60) 34%,rgba(8,2,5,.30) 62%,rgba(8,2,5,.42) 100%),linear-gradient(180deg,rgba(8,2,5,.18) 0%,rgba(8,2,5,.35) 45%,rgba(8,2,5,.88) 100%)!important}
+.heroCopy{max-width:820px;padding:100px 0 76px;text-shadow:0 3px 22px rgba(0,0,0,.72)}
+.heroCopy:before{content:"";position:absolute;z-index:-1;left:-45px;top:55px;bottom:35px;width:min(780px,88vw);background:linear-gradient(90deg,rgba(12,2,7,.52),rgba(12,2,7,.22),transparent);filter:blur(18px);pointer-events:none}
+.hero h1{color:#fff!important;text-shadow:0 4px 30px rgba(0,0,0,.85),0 1px 2px rgba(0,0,0,.95)}
+.hero p{color:#fff!important;text-shadow:0 3px 14px rgba(0,0,0,.82);font-weight:500}
+.hero .kicker{color:#fff!important;text-shadow:0 3px 12px rgba(0,0,0,.8);font-weight:700}
+.heroNote{color:#fff!important;text-shadow:0 3px 12px rgba(0,0,0,.8)}
+.heroBtns .btn{box-shadow:0 7px 25px rgba(0,0,0,.32)}
+.heroBtns .btn.light{background:#fff!important;color:#b3123a!important;border-color:#fff!important}
+@media(max-width:650px){.heroCopy{padding:72px 0 48px}.heroCopy:before{left:-25px;top:30px;bottom:20px;width:105vw;background:rgba(12,2,7,.38);filter:blur(20px)}.hero:after{background:linear-gradient(180deg,rgba(8,2,5,.30),rgba(8,2,5,.52) 42%,rgba(8,2,5,.93) 100%)!important}}
 
 /* SEASONAL SPOTLIGHT */
 .seasonal{position:relative;overflow:hidden;background:#f7eee9;color:#241214}
@@ -31,7 +34,18 @@ css = r'''
 @media(max-width:650px){.seasonalBullets{grid-template-columns:1fr}.seasonalArt img{aspect-ratio:1/1}}
 '''
 
-if "/* HERO READABILITY FIX */" not in html:
+# Always inject the latest hero fix on each Netlify build.
+# This is intentionally unconditional so later CSS changes are applied even if an older
+# HERO READABILITY FIX block already exists in index.html.
+marker = "/* HERO READABILITY FIX */"
+if marker in html:
+    start = html.index(marker)
+    end = html.find("/* SEASONAL SPOTLIGHT */", start)
+    if end != -1:
+        html = html[:start] + css.strip() + "\n" + html[end:]
+    else:
+        html = html.replace("</style>", css + "\n</style>", 1)
+else:
     html = html.replace("</style>", css + "\n</style>", 1)
 
 seasonal = r'''
