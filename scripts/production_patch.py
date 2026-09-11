@@ -39,29 +39,9 @@ if "@tayfloralss_" not in html:
     if count != 1:
         html = html.replace('</main>', instagram + '\n</main>', 1)
 
-# Put the exact Fall video into a visible, reliable Google Drive video player.
-# The Drive /preview URL renders Google's native video player instead of relying
-# on Drive's download endpoint as an HTML5 <video src>, which can be blocked.
-# autoplay=1 + mute=1 lets Drive's player start playing on load without a click,
-# matching the way the hero videos autoplay (browsers require muted for autoplay).
-if 'id="tay-fall-drive-video"' not in html:
-    video = '''
-<section class="sec seasonal" id="fall-video">
-  <div class="w seasonalGrid">
-    <div class="seasonalArt" style="background:#18090d">
-      <iframe id="tay-fall-drive-video" src="https://drive.google.com/file/d/19fcEOCIouLndxHFSgNpILzqKsJ2H3SA1/preview?autoplay=1&mute=1" title="Tay Florals Fall video" allow="autoplay" style="display:block;width:100%;aspect-ratio:9/16;border:0"></iframe>
-    </div>
-    <div class="seasonalCopy">
-      <a class="btn" href="#order">Ask about Fall Flowers</a>
-    </div>
-  </div>
-</section>
-'''
-    marker = '<section class="sec seasonal" id="seasonal">'
-    if marker in html:
-        html = html.replace(marker, video + '\n' + marker, 1)
-    else:
-        html = html.replace('<section class="hero"', video + '\n<section class="hero"', 1)
+# Remove the Fall video section (Google Drive embed) if an earlier build added it.
+fall_video_pattern = r'\s*<section class="sec seasonal" id="fall-video">.*?</section>'
+html = re.sub(fall_video_pattern, '', html, count=1, flags=re.S)
 
 # Enforce Tay's 3-day notice rule in the inquiry date picker.
 if 'TAY_DATE_RULE' not in html:
