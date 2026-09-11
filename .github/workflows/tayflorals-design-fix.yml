@@ -1,4 +1,4 @@
-name: Tay Florals design fix
+name: Tay Floralss design fix
 
 on:
   push:
@@ -57,7 +57,7 @@ jobs:
           <section class="sec seasonal" id="seasonal">
             <div class="w seasonalGrid">
               <div class="seasonalArt">
-                <img src="images/gallery/bouquet-all-34.jpg" alt="Tay Florals seasonal bouquet">
+                <img src="images/gallery/bouquet-all-34.jpg" alt="Tay Floralss seasonal bouquet">
                 <div class="seasonalBadge">Seasonal spotlight · Fall</div>
               </div>
               <div class="seasonalCopy">

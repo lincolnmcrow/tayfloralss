@@ -11,13 +11,13 @@ if "@tayfloralss_" not in html:
   <div class="w">
     <div class="head">
       <div class="ey">Follow my creations</div>
-      <h2>Tay Florals on Instagram.</h2>
+      <h2>Tay Floralss on Instagram.</h2>
       <p>See recent creations, floral ideas, and behind-the-scenes work from Tay.</p>
     </div>
     <div style="background:#fff;border:1px solid #ecd8dd;border-radius:24px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:16px">
         <div style="width:64px;height:64px;border-radius:50%;overflow:hidden;background:#f7dbe4;flex:none">
-          <img src="images/ig/pfp-new.jpg" alt="Tay Florals" style="width:100%;height:100%;object-fit:cover">
+          <img src="images/ig/pfp-new.jpg" alt="Tay Floralss" style="width:100%;height:100%;object-fit:cover">
         </div>
         <div>
           <strong style="display:block;font:700 1.35rem Fraunces,serif">Naba Tay | DFW Florist</strong>
@@ -76,13 +76,13 @@ if 'og:image' not in html:
     tags = '''
 <meta property="og:url" content="https://tayfloralss.netlify.app/">
 <meta property="og:image" content="https://tayfloralss.netlify.app/images/gallery/bouquet-all-34.jpg">
-<meta property="og:image:alt" content="Tay Florals custom bouquet">
+<meta property="og:image:alt" content="Tay Floralss custom bouquet">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tay Florals | Custom Florals in DFW">
+<meta name="twitter:title" content="Tay Floralss | Custom Florals in DFW">
 <meta name="twitter:description" content="Custom bouquets and floral gifts across the DFW area.">
 <meta name="twitter:image" content="https://tayfloralss.netlify.app/images/gallery/bouquet-all-34.jpg">
 '''
     html = html.replace('</head>', tags + '</head>', 1)
 
 path.write_text(html, encoding='utf-8')
-print('Tay Florals final production patch applied')
+print('Tay Floralss final production patch applied')

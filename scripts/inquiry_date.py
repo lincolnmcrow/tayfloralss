@@ -22,7 +22,7 @@ if marker not in html:
 
   dateInput.min = minDate;
   dateInput.setAttribute('min', minDate);
-  dateInput.title = 'Tay Florals requires at least 3 days notice.';
+  dateInput.title = 'Tay Floralss requires at least 3 days notice.';
 
   dateInput.addEventListener('input', () => {
     if (dateInput.value && dateInput.value < minDate) {

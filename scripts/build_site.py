@@ -74,7 +74,7 @@ seasonal = r'''
 <section class="sec seasonal" id="seasonal">
   <div class="w seasonalGrid">
     <div class="seasonalArt">
-      <img src="images/gallery/bouquet-all-34.jpg" alt="Tay Florals seasonal bouquet">
+      <img src="images/gallery/bouquet-all-34.jpg" alt="Tay Floralss seasonal bouquet">
       <div class="seasonalBadge">Seasonal spotlight · Fall</div>
     </div>
     <div class="seasonalCopy">
@@ -107,7 +107,7 @@ if head_end != -1:
 <meta property="og:url" content="https://tayfloralss.netlify.app/">
 <meta property="og:image" content="https://tayfloralss.netlify.app/images/gallery/bouquet-all-01.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tay Florals | Custom Florals in DFW">
+<meta name="twitter:title" content="Tay Floralss | Custom Florals in DFW">
 <meta name="twitter:description" content="Custom bouquets, floral gifts, fresh flowers, eternal arrangements, and local DFW delivery.">
 <meta name="twitter:image" content="https://tayfloralss.netlify.app/images/gallery/bouquet-all-01.jpg">
 '''
@@ -121,7 +121,7 @@ if 'application/ld+json' not in html:
 {
   "@context":"https://schema.org",
   "@type":"Florist",
-  "name":"Tay Florals",
+  "name":"Tay Floralss",
   "url":"https://tayfloralss.netlify.app/",
   "description":"Custom bouquets and floral gifts serving the Dallas–Fort Worth area.",
   "areaServed":"Dallas–Fort Worth, Texas",
@@ -140,7 +140,7 @@ if 'id="service-area"' not in html:
     <div>
       <div class="ey">Local florist</div>
       <h2>Made for the DFW area.</h2>
-      <p>Tay Florals creates custom arrangements for moments big and small across the Dallas–Fort Worth area. For local orders, ask about current delivery availability. Eternal arrangements may also be available for shipping outside the local area.</p>
+      <p>Tay Floralss creates custom arrangements for moments big and small across the Dallas–Fort Worth area. For local orders, ask about current delivery availability. Eternal arrangements may also be available for shipping outside the local area.</p>
     </div>
     <div class="serviceAreaBadge">♡ DFW floral delivery</div>
   </div>
@@ -207,7 +207,7 @@ if '/* TAY PRODUCTION JS */' not in html:
     const image = galleryButtons[galleryIndex].querySelector('img');
     if (!image) return;
     modalImg.src = image.src;
-    modalImg.alt = image.alt || 'Tay Florals bouquet';
+    modalImg.alt = image.alt || 'Tay Floralss bouquet';
   }
   galleryButtons.forEach((button,i) => button.addEventListener('click', () => {
     galleryIndex = i;
@@ -240,4 +240,4 @@ def eager_first(match):
 html = re.sub(r'<img[^>]*loading="lazy"[^>]*>', eager_first, html)
 
 path.write_text(html, encoding="utf-8")
-print("Tay Florals production polish applied")
+print("Tay Floralss production polish applied")
