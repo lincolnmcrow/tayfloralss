@@ -3,8 +3,7 @@ from pathlib import Path
 path = Path("index.html")
 html = path.read_text(encoding="utf-8")
 
-# Keep Tay's Instagram profile information visible and add a clear Instagram card
-# if the current source does not already contain it.
+# Keep Tay's Instagram profile information visible.
 if "@tayfloralss_" not in html:
     instagram = '''
 <section class="sec blush" id="instagram">
@@ -40,14 +39,15 @@ if "@tayfloralss_" not in html:
     else:
         html = html.replace('</main>', instagram + '\n</main>', 1)
 
-# Add the supplied Fall video as an actual HTML5 video. Google Drive's view URL
-# is not a media URL, so use Drive's download endpoint for the public file.
-if '19fcEOCIouLndxHFSgNpILzqKsJ2H3SA1' not in html:
+# Put the exact Fall video into a visible, reliable Google Drive video player.
+# The Drive /preview URL renders Google's native video player instead of relying
+# on Drive's download endpoint as an HTML5 <video src>, which can be blocked.
+if 'id="tay-fall-drive-video"' not in html:
     video = '''
 <section class="sec seasonal" id="fall-video">
   <div class="w seasonalGrid">
     <div class="seasonalArt" style="background:#18090d">
-      <video src="https://drive.google.com/uc?export=download&id=19fcEOCIouLndxHFSgNpILzqKsJ2H3SA1" autoplay muted loop playsinline controls preload="metadata" style="display:block;width:100%;aspect-ratio:9/16;object-fit:cover"></video>
+      <iframe id="tay-fall-drive-video" src="https://drive.google.com/file/d/19fcEOCIouLndxHFSgNpILzqKsJ2H3SA1/preview" title="Tay Florals Fall video" allow="autoplay" style="display:block;width:100%;aspect-ratio:9/16;border:0"></iframe>
     </div>
     <div class="seasonalCopy">
       <div class="ey">Seasonal spotlight</div>
