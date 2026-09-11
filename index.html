@@ -306,7 +306,7 @@ if(wizForm){
   const val=id=>{const el=document.getElementById(id);return el?el.value.trim():''};
   const toggleReveal=(id,show)=>{const el=document.getElementById(id);if(el)el.classList.toggle('show',show)};
 
-  function showStep(i){
+  function showStep(i,scroll){
     steps.forEach((s,n)=>s.classList.toggle('active',n===i));
     idx=i;
     const pct=Math.round((i/(steps.length-1))*100);
@@ -315,7 +315,7 @@ if(wizForm){
     const g=+steps[i].dataset.group;
     groupEls.forEach(el=>{const gi=+el.dataset.group;el.classList.toggle('active',gi===g);el.classList.toggle('done',gi<g)});
     if(i===steps.length-1)buildSummary();
-    wizForm.scrollIntoView({behavior:'smooth',block:'start'});
+    if(scroll!==false)wizForm.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
   function selectCard(target,value){
@@ -410,8 +410,8 @@ if(wizForm){
     $('#wizSummary').innerHTML=rows.map(r=>`<div><b>${esc(r[0])}</b><span>${esc(r[1])}</span></div>`).join('');
   }
 
-  showStep(0);
-  wizSetOccasion=v=>{selectCard('f-occasion',v);showStep(0)};
+  showStep(0,false);
+  wizSetOccasion=v=>{selectCard('f-occasion',v);showStep(0,false)};
   onLangChange=()=>{stepLabel.textContent=t('misc.stepOf').replace('{n}',idx+1).replace('{t}',steps.length);if(idx===steps.length-1)buildSummary()};
 }
 
