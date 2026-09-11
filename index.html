@@ -22,12 +22,60 @@
 @media(max-width:980px){.links{display:none}.menu{display:block}.actions>.btn{display:none}.media{grid-template-columns:1fr}.media div:not(:first-child){display:none}.story,.order{grid-template-columns:1fr}.orderCopy{position:static}.services{grid-template-columns:1fr 1fr}.occasions{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.news{grid-template-columns:1fr}}
 @media(max-width:650px){.w{width:min(100% - 28px,1180px)}.sec{padding:72px 0}.logo{font-size:1.9rem}.lang{display:none}.heroCopy{padding:80px 0 50px}.hero h1{font-size:clamp(3rem,16vw,5rem)}.hero p{font-size:1rem}.services,.choice{grid-template-columns:1fr}.proof{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form{padding:21px}.steps{grid-template-columns:1fr}.newsForm{flex-direction:column}.newsForm input{min-width:0}.sticky{display:block}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* HERO READABILITY FIX */
+.hero:after{background:linear-gradient(180deg,rgba(12,2,6,.38) 0%,rgba(12,2,6,.48) 34%,rgba(12,2,6,.90) 100%)!important}
+.heroCopy{text-shadow:0 2px 18px rgba(0,0,0,.48)}
+.hero h1{text-shadow:0 3px 24px rgba(0,0,0,.62)}
+.hero p{color:#fff!important;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero .kicker{color:#fff!important;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.heroNote{color:#fff!important;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.heroBtns .btn.light{box-shadow:0 5px 22px rgba(0,0,0,.22)}
+
+/* SEASONAL SPOTLIGHT */
+.seasonal{position:relative;overflow:hidden;background:#f7eee9;color:#241214}
+.seasonal:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(179,18,58,.07);right:-140px;top:-180px}
+.seasonalGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.seasonalArt{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(86,17,35,.16);transform:rotate(-1deg)}
+.seasonalArt img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.seasonalBadge{position:absolute;left:18px;bottom:18px;background:#fff;border:1px solid #ecd8dd;border-radius:999px;padding:9px 13px;font:700 .68rem "Space Mono",monospace;color:#b3123a;text-transform:uppercase;letter-spacing:.08em}
+.seasonalCopy{position:relative;z-index:1}
+.seasonalCopy h2{font:700 clamp(2.6rem,5vw,4.8rem)/.98 Fraunces,serif;letter-spacing:-.04em;margin:12px 0 18px}
+.seasonalCopy p{max-width:58ch;color:#73585d;font-size:1.05rem}
+.seasonalBullets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:25px 0}
+.seasonalBullets div{background:rgba(255,255,255,.72);border:1px solid #ecd8dd;border-radius:14px;padding:14px;font-weight:600}
+.seasonalBullets span{display:block;color:#73585d;font-size:.82rem;font-weight:400;margin-top:2px}
+@media(max-width:980px){.seasonalGrid{grid-template-columns:1fr;gap:35px}.seasonalArt{order:2}}
+@media(max-width:650px){.seasonalBullets{grid-template-columns:1fr}.seasonalArt img{aspect-ratio:1/1}}
+
 </style>
 </head>
 <body>
 <header class="nav"><div class="w navin"><a class="logo" href="#home">Tay Florals</a><nav class="links"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#order">Custom Order</a><a href="#faq">FAQ</a></nav><div class="actions"><div class="lang"><button class="active" data-lang="en">EN</button><button data-lang="es">ES</button></div><a class="btn" href="#order">Start an Order</a><button class="menu" id="menu" aria-label="Open menu"><span></span><span></span><span></span></button></div></div></header>
 <main id="home">
 <section class="hero"><div class="media"><div><video src="images/hero/hero1.mp4" autoplay muted loop playsinline></video></div><div><video src="images/hero/hero2.mp4" autoplay muted loop playsinline></video></div><div><video src="images/hero/hero3.mp4" autoplay muted loop playsinline></video></div></div><div class="w heroCopy"><div class="kicker" data-en="Custom florals · DFW area" data-es="Flores personalizadas · Área DFW">Custom florals · DFW area</div><h1 data-en="Flowers that say what words can't." data-es="Flores que dicen lo que las palabras no pueden.">Flowers that say <em>what words can't.</em></h1><p data-en="Tell me your colors, your occasion, your budget, or simply the feeling you want. I'll turn it into something made just for you." data-es="Dime tus colores, tu ocasión, tu presupuesto o simplemente lo que quieres sentir. Yo lo convierto en algo hecho especialmente para ti.">Tell me your colors, your occasion, your budget, or simply the feeling you want. I'll turn it into something made just for you.</p><div class="heroBtns"><a class="btn" href="#order" data-en="Start a custom order" data-es="Empezar un pedido">Start a custom order</a><a class="btn light" href="#gallery" data-en="See the work" data-es="Ver el trabajo">See the work</a></div><div class="heroNote">Fresh flowers, eternal arrangements, and custom add-ons · Inquiry only · No checkout</div></div></section>
+
+<section class="sec seasonal" id="seasonal">
+  <div class="w seasonalGrid">
+    <div class="seasonalArt">
+      <img src="images/gallery/bouquet-all-34.jpg" alt="Tay Florals seasonal bouquet">
+      <div class="seasonalBadge">Seasonal spotlight · Fall</div>
+    </div>
+    <div class="seasonalCopy">
+      <div class="ey">Seasonal spotlight</div>
+      <h2>Fall flowers are here.</h2>
+      <p>Bring the season into your next bouquet with warm, romantic tones and a custom design made around your occasion. Tell Tay what you are celebrating and ask about current seasonal colors, flowers, and availability.</p>
+      <div class="seasonalBullets">
+        <div>Warm seasonal colors<span>Think burgundy, blush, cream, and autumn tones.</span></div>
+        <div>Made to order<span>Your arrangement can be shaped around your person and occasion.</span></div>
+        <div>Fresh or eternal<span>Choose the style that fits your moment.</span></div>
+        <div>DFW area<span>Ask about local delivery and availability.</span></div>
+      </div>
+      <a class="btn" href="#order">Ask about Fall Flowers</a>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="sec blush"><div class="w story"><div><span class="ey">The story behind Tay Florals</span><h2>Hi, I'm Naba — but you can call me Tay.</h2><p>Tay Florals started from scratch in March 2024 — no floral background, no shortcuts, just creativity, faith, and a lot of heart. I'm based in the Dallas/Fort Worth area and every arrangement is built around the person receiving it.</p><p>Flowers can say love, celebration, grief, gratitude, or simply “I see you.” That's what I want every bouquet to communicate.</p><p class="quote">“Every bouquet is designed one petal at a time, just for you.”</p><a class="btn" href="#order">Create something together</a></div><div class="photo"><img src="images/about/naba.jpg" alt="Naba, owner and designer of Tay Florals" loading="lazy"></div></div><div class="w proof"><div><strong>Custom</strong><span>Designs built around your idea</span></div><div><strong>DFW</strong><span>Local delivery area</span></div><div><strong>1:1</strong><span>Personal inquiry process</span></div></div></section>
 <section id="services" class="sec"><div class="w"><div class="head"><span class="ey">What I create</span><h2>Made around your moment.</h2><p>Choose a starting point and we can shape the colors, size, flowers, extras, and budget around your idea.</p></div><div class="services"><article class="service"><div class="serviceImg"><img src="images/gallery/bouquet-all-01.jpg" alt="Custom bouquet by Tay Florals" loading="lazy"></div><div class="serviceBody"><span class="num">01 · BOUQUETS</span><h3>Custom Bouquets</h3><p>Fresh natural flowers or long-lasting eternal blooms, designed around your person and your vision.</p><span class="tag">Fresh or Eternal</span></div></article><article class="service"><div class="serviceImg"><img src="images/gallery/bouquet-all-12.jpg" alt="Floral gift arrangement by Tay Florals" loading="lazy"></div><div class="serviceBody"><span class="num">02 · GIFTS</span><h3>Floral Gifts</h3><p>Add a plushie, chocolates, balloons, a custom message, or a vase upgrade.</p><span class="tag">Custom Add-ons</span></div></article><article class="service"><div class="serviceImg"><img src="images/gallery/bouquet-all-27.jpg" alt="Large custom floral arrangement by Tay Florals" loading="lazy"></div><div class="serviceBody"><span class="num">03 · CUSTOM</span><h3>Your Idea</h3><p>Have a specific theme, color palette, character, or concept? Tell me what you're imagining.</p><span class="tag">Made To Order</span></div></article></div></div></section>
 <section class="sec blush"><div class="w"><div class="head"><span class="ey">Choose your flowers</span><h2>Fresh or eternal?</h2><p>Not sure which fits your moment? Tell me what matters most and I can help you choose.</p></div><div class="choice"><div class="choiceCard"><span class="ey">Fresh</span><h3>Natural flowers</h3><p>For moments where the beauty of fresh blooms is part of the experience.</p><ul class="list"><li>Natural flowers</li><li>Best for local pickup or delivery</li><li>Great for events and celebrations</li><li>Designed around your colors</li></ul></div><div class="choiceCard featured"><span class="ey" style="color:#ffd5df">Eternal</span><h3 style="color:#fff">Long-lasting blooms</h3><p>Artificial arrangements made to keep the feeling around much longer.</p><ul class="list"><li>Long-lasting artificial flowers</li><li>Great for keepsakes and gifts</li><li>Custom colors and themes</li><li>Shipping can be discussed</li></ul></div></div></div></section>
