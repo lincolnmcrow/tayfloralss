@@ -69,6 +69,7 @@
           <div class="field"><label>Name</label><input required name="rname" type="text"></div>
           <div class="field">
             <label>Rating</label>
+            <input type="hidden" name="rrating" id="ratingInput">
             <div class="star-input" id="starInput" role="radiogroup" aria-label="Rating">
               <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
             </div>
@@ -212,11 +213,13 @@
 
   var starInput = document.getElementById("starInput");
   var stars = starInput ? Array.from(starInput.querySelectorAll(".star")) : [];
+  var ratingInput = document.getElementById("ratingInput");
   var currentRating = 0;
   stars.forEach(function(s){
     s.addEventListener("click", function(){
       currentRating = parseInt(s.dataset.value, 10);
       stars.forEach(function(st){ st.classList.toggle("active", parseInt(st.dataset.value,10) <= currentRating); });
+      if(ratingInput) ratingInput.value = currentRating;
     });
   });
 
@@ -288,6 +291,7 @@
       reviewForm.reset();
       currentRating = 0;
       stars.forEach(function(st){ st.classList.remove("active"); });
+      if(ratingInput) ratingInput.value = "";
       photoDataUrl = "";
       photoPreview.classList.remove("show");
     }).catch(function(){
