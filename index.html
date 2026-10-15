@@ -280,7 +280,7 @@ const VALUE_KEY={'Birthday':'occ.birthday','Anniversary':'occ.anniversary','Grad
 let currentLang='en';
 const t=k=>(I18N[currentLang]&&I18N[currentLang][k])||(I18N.en[k]||k);
 const tv=v=>{const k=VALUE_KEY[v];return k?t(k):v};
-const grid=$('#galleryGrid');for(let i=1;i<=40;i++){const b=document.createElement('button');const src=`images/gallery/bouquet-all-${String(i).padStart(2,'0')}.jpg`;b.innerHTML=`<img src="${src}" alt="Tay Floralss bouquet ${i}" loading="lazy">`;b.onclick=()=>{$('#modalImg').src=src;$('#modal').classList.add('open');};grid.appendChild(b)}$('#close').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target.id==='modal')$('#close').click()};document.onkeydown=e=>{if(e.key==='Escape')$('#close').click()};
+const grid=$('#galleryGrid');for(let i=1;i<=44;i++){const b=document.createElement('button');const src=`images/gallery/bouquet-all-${String(i).padStart(2,'0')}.jpg`;b.innerHTML=`<img src="${src}" alt="Tay Floralss bouquet ${i}" loading="lazy">`;b.onclick=()=>{$('#modalImg').src=src;$('#modal').classList.add('open');};grid.appendChild(b)}$('#close').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target.id==='modal')$('#close').click()};document.onkeydown=e=>{if(e.key==='Escape')$('#close').click()};
 $('#menu').onclick=()=>{$('.links').style.display=$('.links').style.display==='flex'?'':'flex';$('.links').style.position='absolute';$('.links').style.top='74px';$('.links').style.left='0';$('.links').style.right='0';$('.links').style.padding='16px';$('.links').style.background='#fff';$('.links').style.flexDirection='column';$('.links').style.alignItems='flex-start';$('.links').style.borderBottom='1px solid var(--l)'};
 let onLangChange=null;
 const setLang=l=>{
